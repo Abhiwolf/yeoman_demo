@@ -1,0 +1,60 @@
+<div class="col-md-12" ng-controller="DashboardCtrl">
+    <div class="">
+        <div class="col-sm-8">
+            <div class="row well">
+                <div class="col-sm-4 text-center">
+                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" width="10" height="10">
+                    </canvas>
+                    <span>{{labels[0]}}:{{data[0]}}%</span>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 text-center" ng-controller="DashboardCtrlChartPhysics">
+                        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+                        </canvas>
+                        <span>{{labels[0]}}:{{data[0]}}%</span>
+                    </div>
+                    <div class="col-sm-12 text-center" ng-controller="DashboardCtrlChartChemistry">
+                        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+                        </canvas>
+                        <span>{{labels[0]}}:{{data[0]}}%</span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 text-center" ng-controller="DashboardCtrlChartMaths">
+                        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+                        </canvas>
+                        <span>{{labels[0]}}:{{data[0]}}%</span>
+                    </div>
+                    <div class="col-sm-12 text-center" ng-controller="DashboardCtrlChartComputer">
+                        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+                        </canvas>
+                        <span>{{labels[0]}}:{{data[0]}}%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row well">
+                <div class="col-sm-6" ng-controller="LineChartCtrl">
+                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick" </canvas>
+                </div>
+                <div class="col-sm-6" ng-controller="twoLineChartCtrl">
+                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick" </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading text-center">Notification</div>
+                <div class="panel-body">
+                    <div class="col-sm-12 margin-bottom-15" ng-repeat="item in notificationData">
+                        <div class="col-sm-6">{{item.subjectName}}</div>
+                        <div class="col-sm-4">{{item.TestNo}}</div>
+                        <div class="col-sm-2">
+                            <button class="btn bt-sm" ng-class="'{{item.action}}' === 'Write' ? 'notification-write-btn' : 'notification-play-btn'">{{item.action}}</button>
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

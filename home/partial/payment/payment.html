@@ -1,0 +1,89 @@
+<div class="col-md-12" ng-controller="PaymentCtrl">
+    <div class="col-sm-10 center-content">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="thumbnail text-center" ng-class="{'thumbnail-background-infocus' : activeBtn === 'Physics'}">
+                    <h4>Physics</h4>
+                    <br/>
+                    <span><i class="fa fa-gears"></i></span>
+                    <p>Rs 999</p>
+                    <br/>
+                    <button class="btn btn-block" ng-click="clickSelectBtn('Physics')" ng-class="activeBtn === 'Physics' ? 'btn-warning' : 'thumbnail-btn-color'">Select</button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="thumbnail text-center" ng-class="{'thumbnail-background-infocus' : activeBtn  === 'Chemistry'}">
+                    <h4>Chemistry</h4>
+                    <br/>
+                    <span><i class="fa fa-flask"></i></span>
+                    <p>Rs 999</p>
+                    <br/>
+                    <button class="btn btn-block" ng-click="clickSelectBtn('Chemistry')" ng-class="activeBtn === 'Chemistry' ? 'btn-warning' : 'thumbnail-btn-color'">Select</button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="thumbnail text-center" ng-class="{'thumbnail-background-infocus' : activeBtn  === 'Maths'}">
+                    <h4>Maths</h4>
+                    <br/>
+                    <span><i class="fa fa-calculator"></i></span>
+                    <p>Rs 999</p>
+                    <br/>
+                    <button class="btn btn-block" ng-click="clickSelectBtn('Maths')" ng-class="activeBtn === 'Maths' ? 'btn-warning' : 'thumbnail-btn-color'">Select</button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="thumbnail text-center" ng-class="{'thumbnail-background-infocus' : activeBtn  === 'computerScience'}">
+                    <h4>Computer Science</h4>
+                    <br/>
+                    <span><i class="fa fa-laptop"></i></span>
+                    <p>Rs 999</p>
+                    <br/>
+                    <button class="btn btn-block" ng-click="clickSelectBtn('computerScience')" ng-class="activeBtn === 'computerScience' ? 'btn-warning' : 'thumbnail-btn-color'">Select</button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="thumbnail text-center" ng-class="{'thumbnail-background-infocus' : activeBtn  === 'All'}">
+                    <h4>All</h4>
+                    <br/>
+                    <span><i class="fa fa-asterisk"></i></span>
+                    <p>Rs 3499</p>
+                    <br/>
+                    <button class="btn btn-block thumbnail-btn-color" ng-click="clickSelectBtn('All')" ng-class="activeBtn === 'All' ? 'btn-warning' : 'thumbnail-btn-color'">Select</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 well text-muted" ng-if="isSelectBtnClick">
+            <div class="col-sm-2">
+                <h4>Subject Selected</h4>
+                <span>{{activeBtn}}</span>
+            </div>
+            <div class="col-sm-2">
+                <h4>Total</h4>
+                <span>900</span>
+            </div>
+            <div class="col-sm-2">
+                <h4>Service Tax</h4>
+                <span>136</span>
+            </div>
+            <div class="col-sm-2">
+                <h4>Grand Total</h4>
+                <span>1135</span>
+            </div>
+            <div class="col-sm-2 col-sm-offset-1 margin-top-15">
+                <button class="btn btn-warning btn-block" ng-click="goToPaymentMethod()">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Pay Bills</h3>
+    </div>
+    <div class="modal-body">
+        <h5>{{message}}</h5>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

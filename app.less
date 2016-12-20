@@ -1,0 +1,100 @@
+@import "bower_components/bootstrap/less/bootstrap.less";
+//@import "bower_components/bootstrap/less/theme.less";
+@import "bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "bower_components/font-awesome/fonts";
+
+/* Component LESS */
+
+@import "login/login.less";
+@import "home/home.less";
+
+/* Add Component LESS Above */
+
+
+/* Required for Angular UI Bootstrap */
+
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+    cursor: pointer;
+}
+
+/* Personal preference for BS modal.  The LESS below makes the backdrop white and
+   causes the modal to fade in rather than slide in. */
+
+//@modal-backdrop-bg: white;
+//.modal {
+//	&.fade {
+//		.transition(opacity .3s);
+//	}
+//	&.fade .modal-dialog {
+//		.translate(0,0);
+//	}
+//}
+//custom style 
+.center-content {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+}
+.navbar-custom-default {
+    background-color: #fff;
+    border-color: #e7e7e7;
+    margin-top: 15px;
+}
+.custom-active-class {
+    a {
+        color: #fff !important;
+        background-color: #FDCA2E !important;
+    }
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: inherit;
+}
+
+/*
+.navbar-right {
+    float: right !important;
+    float: right;
+    margin-right: 0px;
+}
+*/
+
+.navbar-custom-border {
+    border-right: 1px solid #fff;
+}
+#myNavbar {
+    ul>li>a {
+        width: 100px;
+        text-align: center;
+        color: #7D7DA6;
+        text-decoration: none;
+        background-color: #F3F3F3;
+        span {
+            display: block;
+            .fa {
+                font-size: 25px;
+            }
+        }
+    }
+}
+.navbar-right-list {
+    margin-top: 20px;
+    margin-right: 100px;
+}
+//panel heading custom style
+.panel {
+    .panel-heading {
+        color: #fff;
+        background-color: #6ACB9A;
+    }
+}
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+.margin-top-15 {
+    margin-top: 15px;
+}

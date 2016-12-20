@@ -1,5 +1,5 @@
 # yeoman_demo
-How to start yeoaman generator with Angular?
+How to start yeoman generator with Angular?
 
 
 

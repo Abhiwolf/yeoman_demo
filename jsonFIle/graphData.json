@@ -1,0 +1,17 @@
+[{
+    "id": 1,
+    "subjectName": "Maths",
+    "gainPercentage": 36
+}, {
+    "id": 2,
+    "subjectName": "Physics",
+    "gainPercentage": 25
+}, {
+    "id": 3,
+    "subjectName": "Chemistry",
+    "gainPercentage": 12
+}, {
+    "id": 4,
+    "subjectName": "Computer Science",
+    "gainPercentage": 12
+}]

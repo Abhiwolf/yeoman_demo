@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="yeomanGenerator">
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="app.less" type="text/css" rel="stylesheet/less">
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <!-- Livereload script for development only (stripped during dist build) -->
+    <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+    <!-- JS from Bower Components -->
+    <script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <!-- Add New Bower Component JS Above -->
+
+
+    <!-- Main App JS -->
+    <script src="app.js"></script>
+    <script src="login/login.js"></script>
+    <script src="login/partial/loginPage/loginPage.js"></script>
+    <script src="home/home.js"></script>
+    <script src="home/partial/dashboard/dashboard.js"></script>
+    <script src="service/serviceData.js"></script>
+    <script src="home/partial/payment/payment.js"></script>
+    <script src="home/partial/notification/notification.js"></script>
+    <!-- Add New Component JS Above -->
+    <nav class="navbar navbar-custom-default navbar-fixed-top" ng-if="authInfo.isAuth">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{'custom-active-class': $state.includes('dashboard')}">
+                        <a class="navbar-custom-border" ui-sref="dashboard">
+                            <span class="text-center"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navbar-custom-border" href="#">
+                            <span class="text-center"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                            <span>Test</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navbar-custom-border" href="#">
+                            <span class="text-center"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+                            <span>Report</span>
+                        </a>
+                    </li>
+                    <li ng-class="{'custom-active-class': $state.includes('notification')}">
+                        <a class="navbar-custom-border" ui-sref="notification">
+                            <span class="text-center"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
+                            <span>Notifications</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navbar-custom-border" href="#">
+                            <span class="text-center"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                            <span>Help</span>
+                        </a>
+                    </li>
+                    <li ng-class="{'custom-active-class': $state.includes('payment')}">
+                        <a class="navbar-custom-border" ui-sref="payment">
+                            <span class="text-center"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                            <span>Payment</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right navbar-right-list">
+                    <li>
+                        <button class="btn btn-success" ng-click="logoutOperation()">Signout</button>
+                    </li>
+                    <li><span style="margin-left: 20px;"><a href="#">{{authInfo.userName}}<i class="caret"></i></a></span></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="content" class="container-fluid" style="margin-top:100px;">
+        <div class="row">
+            <div ui-view>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
